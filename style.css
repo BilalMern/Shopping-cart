@@ -15,6 +15,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 25px 60px;
+    margin-bottom: 30px;
 }
 /**    
 * ? Styling cart icon.**/
@@ -36,4 +37,18 @@ background-color: red;
 color: white;
 padding: 3px;
 border-radius: 3px;
+
 }
+
+/** 
+* ! Shop items styles are here **/
+.shop{
+    display: grid;
+    grid-template-columns: repeat(4,223px);
+    gap: 30px;
+}
+.item{
+    border: 2px solid #212529;
+    border-radius: 3px;
+}
+
