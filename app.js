@@ -32,6 +32,8 @@ let shopItemsData = [
   },
 ];
 
+let basket =[];
+
 // ! Making a function in a way that it prints all the carts automatically:
 let generateShop = () => {
   return (shop.innerHTML = shopItemsData
@@ -46,9 +48,9 @@ let generateShop = () => {
   <div class="price-quantity">
     <h2>$ ${price}</h2>
     <div class="buttons">
-      <i class="bi bi-dash-lg"></i>
+      <i onclick ="decrement(${id})" class="bi bi-dash-lg"></i>
       <div id=${id} class="quantity">0</div>
-      <i class="bi bi-plus-lg"></i>
+      <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
     </div>
   </div>
 </div>
@@ -57,3 +59,22 @@ let generateShop = () => {
     .join(""));
 };
 generateShop();
+
+// ! Increment function is here:
+let increment = (id) => {
+  let selectedItem = id; //? Selecting unique id of carts:
+  basket.push({
+    id:selectedItem.id,
+    item:1
+   });
+   console.log(basket)//? Now we make a search function
+};
+
+// ! decrement function is here:
+let decrement = (id) => {
+  let selectedItem = id; //? Selecting unique id of carts:
+ 
+}; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
+
+// ! update function is here:
+let update = () => {};
