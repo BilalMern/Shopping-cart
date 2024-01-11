@@ -86,11 +86,18 @@ let decrement = (id) => {
   }
   
   //  console.log(basket) //? Selecting unique id of carts:
- update()
+ update(selectedItem.id)
 }; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
 
 // ! update function is here:
 let update = (id1) => {
   let search = basket.find((x)=> x.id === id1)
   document.getElementById(id1).innerHTML =search.item;
+  calculation();
 };
+
+//! Total calculation function is here:
+let calculation = ()=>{
+  let cartIcon =document.getElementById("cartAmount")
+  cartIcon.innerHTML = basket.map((x)=> x.item).reduce((x,y)=>x+y,0);
+}
