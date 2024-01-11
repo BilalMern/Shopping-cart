@@ -63,16 +63,29 @@ generateShop();
 // ! Increment function is here:
 let increment = (id) => {
   let selectedItem = id; //? Selecting unique id of carts:
-  basket.push({
+  let search = basket.find((x)=> x.id === selectedItem.id);
+  if(search === undefined){
+    basket.push({
     id:selectedItem.id,
     item:1
    });
-   console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item no will increase again not the whole object added in the basket.
+  }else {
+    search.item += 1
+  }
+  
+   console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item number will increase, not the whole object added in the basket and if it doesnt exist then new object with two values id and item will be added in the basket.
 };
 
 // ! decrement function is here:
 let decrement = (id) => {
   let selectedItem = id; //? Selecting unique id of carts:
+  let search = basket.find((x)=> x.id === selectedItem.id);
+  if(search.item === 0) return
+   else {
+    search.item -= 1
+  }
+  
+   console.log(basket) //? Selecting unique id of carts:
  
 }; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
 
