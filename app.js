@@ -67,7 +67,7 @@ let increment = (id) => {
     id:selectedItem.id,
     item:1
    });
-   console.log(basket)//? Now we make a search function
+   console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item no will increase again not the whole object added in the basket.
 };
 
 // ! decrement function is here:
