@@ -10,7 +10,7 @@ let shopItemsData =[{
 },
 { 
     id: "secondCartData",
-name: "Office shirt Shirt",
+name: "Office Shirt",
 price: 100,
 desc: "Lorem ipsum dolor sit amet consectetur adipisicing:",
 img: "images/img-2.jpg"
@@ -33,13 +33,14 @@ img: "images/img-2.jpg"
 // ! Making a function in a way that it prints all the carts automatically:
 let generateShop=()=>{
 return shop.innerHTML= shopItemsData.map((x)=>{
+    let {id,name,img,desc,price}=x;
 return ` <div class="item">
-<img width="220" src="images/img-1.jpg" alt="" />
+<img width="220" src= ${img} alt="" />
 <div class="details">
-  <h3>Casual Shirt</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+  <h3>${name}</h3>
+  <p>${desc}</p>
   <div class="price-quantity">
-    <h2>$ 45</h2>
+    <h2>$ ${price}</h2>
     <div class="buttons">
       <i class="bi bi-dash-lg"></i>
       <div class="quantity">0</div>

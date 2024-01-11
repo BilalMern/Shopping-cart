@@ -46,6 +46,7 @@ border-radius: 3px;
     display: grid;
     grid-template-columns: repeat(4,223px);
     gap: 30px;
+
     justify-content: center;
 }
 @media (max-width: 1000px) {
