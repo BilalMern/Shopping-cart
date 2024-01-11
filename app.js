@@ -72,8 +72,8 @@ let increment = (id) => {
   }else {
     search.item += 1
   }
-  
-   console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item number will increase, not the whole object added in the basket and if it doesnt exist then new object with two values id and item will be added in the basket.
+  console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item number will increase, not the whole object added in the basket and if it doesnt exist then new object with two values id and item will be added in the basket.
+update();
 };
 
 // ! decrement function is here:
@@ -86,8 +86,10 @@ let decrement = (id) => {
   }
   
    console.log(basket) //? Selecting unique id of carts:
- 
+ update()
 }; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
 
 // ! update function is here:
-let update = () => {};
+let update = () => {
+  console.log("Update function is running!")
+};
