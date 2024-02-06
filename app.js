@@ -72,6 +72,8 @@ let increment = (id) => {
   }else {
     search.item += 1
   }
+  //! Applying local storage:
+  localStorage.setItem("data",JSON.stringify(basket))
   // console.log(basket)//? Now we make a search function by which we can search wether the thing actually exists on the basket or not if it is in the basket then only item number will increase, not the whole object added in the basket and if it doesnt exist then new object with two values id and item will be added in the basket.
 update(selectedItem.id);
 };
