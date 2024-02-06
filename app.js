@@ -32,7 +32,8 @@ let shopItemsData = [
   },
 ];
 
-let basket =[];
+//! Retrieving data from local storage:
+let basket = JSON.parse(localStorage.getItem("data")) || [];  
 
 // ! Making a function in a way that it prints all the carts automatically:
 let generateShop = () => {
