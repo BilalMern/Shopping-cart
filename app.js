@@ -40,6 +40,8 @@ let generateShop = () => {
   return (shop.innerHTML = shopItemsData
     .map((x) => {
       let { id, name, img, desc, price } = x;
+      //! Local storage cart amount updation:
+      let search =basket.find((x)=>x.id === id)||[];
       return ` 
     <div class="item" id= product-id-${id}>
 <img width="220" src= ${img} alt="" />
@@ -50,7 +52,7 @@ let generateShop = () => {
     <h2>$ ${price}</h2>
     <div class="buttons">
       <i onclick ="decrement(${id})" class="bi bi-dash-lg"></i>
-      <div id=${id} class="quantity">0</div>
+      <div id=${id} class="quantity">${search.item === undefined?0 : search.item}</div>
       <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
     </div>
   </div>
@@ -87,7 +89,7 @@ let decrement = (id) => {
    else {
     search.item -= 1
   }
-  
+  localStorage.setItem("data",JSON.stringify(basket))
   //  console.log(basket) //? Selecting unique id of carts:
  update(selectedItem.id)
 }; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
