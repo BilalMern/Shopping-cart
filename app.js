@@ -32,7 +32,7 @@ let shopItemsData = [
   },
 ];
 
-//! Retrieving data from local storage, if we have data it gonna retrive that and if not then its gonna give empty array, if we dont use here or statement with empty array them if we dont have any data our application will block:
+//! Retrieving data from local storage, if we have data it gonna retrive that and if not then its gonna give empty array, if we dont use here or statement with empty array them if we dont have any data our application will block.
 let basket = JSON.parse(localStorage.getItem("data")) || [];  
 
 // ! Making a function in a way that it prints all the carts automatically:
