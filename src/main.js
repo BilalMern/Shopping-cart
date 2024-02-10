@@ -1,36 +1,6 @@
 let shop = document.getElementById("shop");
 
-// ! data array to put automatically:
-let shopItemsData = [
-  {
-    id: "firstCartData",
-    name: "Casual Shirt",
-    price: 45,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing:",
-    img: "images/img-1.jpg",
-  },
-  {
-    id: "secondCartData",
-    name: "Office Shirt",
-    price: 100,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing:",
-    img: "images/img-2.jpg",
-  },
-  {
-    id: "thirdCartData",
-    name: "T Shirt",
-    price: 25,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing:",
-    img: "images/img-3.jpg",
-  },
-  {
-    id: "fourthCartData",
-    name: "Mens Suit",
-    price: 300,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing:",
-    img: "images/img-4.jpg",
-  },
-];
+
 
 //! Retrieving data from local storage, if we have data it gonna retrive that and if not then its gonna give empty array, if we dont use here or statement with empty array them if we dont have any data our application will block.
 let basket = JSON.parse(localStorage.getItem("data")) || [];  
