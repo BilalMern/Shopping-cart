@@ -12,6 +12,15 @@ calculation();
 //! BUILDING CART ITEMS:
 let generateCartItems = ()=>{
 if (basket.length !== 0){
+    return (shoppingCart.innerHTML = basket.map((x)=>{
+        let {id,item}=x;
+        let search = shopItemsData.find((y)=>y.id === id) || []
+        return `
+        <div class ="cart-item">
+        <img width="100" src ="${search.img}">
+        </div>
+        `
+    }).join(""))
 } else{
     shoppingCart.innerHTML =``
     label.innerHTML =`
