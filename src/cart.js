@@ -25,7 +25,7 @@ if (basket.length !== 0){
     shoppingCart.innerHTML =``
     label.innerHTML =`
     <h2>Cart Is Empty</h2>
-    <a href = "index.html"> 
+    <a href = "index.html">
     <button class ="HomeBtn">Back To Home</button>
     </a>
     `
