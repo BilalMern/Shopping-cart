@@ -18,6 +18,7 @@ if (basket.length !== 0){
         return `
         <div class ="cart-item">
         <img width="100" src ="${search.img}">
+        <div class = "details"></div>
         </div>
         `
     }).join(""))
