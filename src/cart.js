@@ -32,3 +32,5 @@ if (basket.length !== 0){
 }
 }
 generateCartItems()
+
+
