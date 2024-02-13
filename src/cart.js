@@ -10,17 +10,23 @@ let calculation = () => {
 calculation();
 
 //! BUILDING CART ITEMS:
-let generateCartItems = ()=>{
-if (basket.length !== 0){
-    return (shoppingCart.innerHTML = basket.map((x)=>{
-        let {id,item}=x;
-        let search = shopItemsData.find((y)=>y.id === id) || []
+let generateCartItems = () => {
+  if (basket.length !== 0) {
+    return (shoppingCart.innerHTML = basket
+      .map((x) => {
+        let { id, item } = x;
+        let search = shopItemsData.find((y) => y.id === id) || [];
         return `
         <div class ="cart-item">
         <img width="100" src ="${search.img}">
         <div class = "details">
         
-        <div class ="title-price-x"></div>  
+        <div class ="title-price-x">
+        <h4>
+        <p>${search.name}</p>
+        </h4>
+        <i class="bi bi-x-lg"></i>
+        </div>  
         
         <div class ="cart-buttons"></div>
         
@@ -28,18 +34,17 @@ if (basket.length !== 0){
 
         </div>
         </div>
-        `
-    }).join(""))
-} else{
-    shoppingCart.innerHTML =``
-    label.innerHTML =`
+        `;
+      })
+      .join(""));
+  } else {
+    shoppingCart.innerHTML = ``;
+    label.innerHTML = `
     <h2>Cart Is Empty</h2>
     <a href = "index.html">
     <button class ="HomeBtn">Back To Home</button>
     </a>
-    `
-}
-}
-generateCartItems()
-
-
+    `;
+  }
+};
+generateCartItems();
