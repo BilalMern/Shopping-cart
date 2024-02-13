@@ -62,7 +62,6 @@ let decrement = (id) => {
   }
   update(selectedItem.id)
   basket = basket.filter((x)=> x.item !== 0)
-  //  console.log(basket) //? Selecting unique id of carts:
   localStorage.setItem("data",JSON.stringify(basket))
 }; //? Now we make small basket above the reason to make it is anytime we select any cart what is going to do is gonna store the data inside our basket to tell specifically which items did we selected. If we select one cart then an object created in our basket inside this object we are going to have two items stored id and item
 
