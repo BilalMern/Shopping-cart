@@ -101,3 +101,14 @@ basket = basket.filter((x)=>x.id !== selectedItem.id)
 localStorage.setItem("data", JSON.stringify(basket));
 generateCartItems()
 }
+
+let totalAmount =()=>{
+    if(basket.length !==0){
+        let amount = basket.map((x)=>{
+            let {id,item}=x;
+            let search =  shopItemsData.find((y)=>y.id=== id)||[];
+            return item *search.price
+        })
+    }
+    else return
+}
