@@ -23,6 +23,7 @@ a{
     justify-content: space-between;
     padding: 25px 60px;
     margin-bottom: 30px;
+    align-items: center;
 }
 /**    
 * ? Styling cart icon.**/
