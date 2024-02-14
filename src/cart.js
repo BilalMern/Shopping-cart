@@ -96,6 +96,7 @@ let update = (id1) => {
   totalAmount();
 };
 
+//! Reomove Item function is here:
 let removeItem = (id) => {
   let selectedItem = id;
   basket = basket.filter((x) => x.id !== selectedItem.id);
@@ -105,6 +106,15 @@ let removeItem = (id) => {
   localStorage.setItem("data",JSON.stringify(basket));
 };
 
+//! Clear cart function is here:
+let clearCart=()=>{
+  basket =[];
+  generateCartItems()
+  localStorage.setItem("data", JSON.stringify(basket));
+
+}
+
+//! Total amount function is here:
 let totalAmount = () => {
   if (basket.length !== 0) {
     let amount = basket
@@ -116,7 +126,7 @@ let totalAmount = () => {
       .reduce((x, y) => x + y, 0);
     label.innerHTML = `<h2>Total Bill: $ ${amount}</h2>
         <button class ="checkout">Checkout</button>
-        <button class = "removeAll">Clear Cart</button>
+        <button onclick ="clearCart()" class = "removeAll">Clear Cart</button>
         `;
   } else return;
 };
