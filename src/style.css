@@ -54,7 +54,7 @@ border-radius: 3px;
     display: grid;
     grid-template-columns: repeat(4,223px);
     gap: 30px;
-
+margin-bottom: 50px;
     justify-content: center;
 }
 @media (max-width: 1000px) {
@@ -71,6 +71,11 @@ border-radius: 3px;
 .item{
     border: 2px solid #212529;
     border-radius: 3px;
+}
+.item img{
+    width: 100%;
+    /***! Top left Top right Bottom left Bottom right **/
+    border-radius: 2px 2px 0 0;
 }
 .details{
     display: flex;
