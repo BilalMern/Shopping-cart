@@ -36,7 +36,7 @@ let generateCartItems = () => {
       <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
     </div>
         
-        <h3>$ ${item*search.price}</h3>
+        <h3>$ ${item * search.price}</h3>
 
         </div>
         </div>
@@ -51,7 +51,7 @@ let generateCartItems = () => {
     <button class ="HomeBtn">Back To Home</button>
     </a>
     `;
-  } 
+  }
 };
 generateCartItems();
 
@@ -68,13 +68,13 @@ let increment = (id) => {
     search.item += 1;
   }
   //! Applying local storage:
-generateCartItems()
+  generateCartItems();
   update(selectedItem.id);
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! decrement function is here:
-let decrement = (id) => { 
+let decrement = (id) => {
   let selectedItem = id; //? Selecting unique id of carts:
   let search = basket.find((x) => x.id === selectedItem.id);
   if (search === undefined) return;
@@ -93,27 +93,31 @@ let update = (id1) => {
   let search = basket.find((x) => x.id === id1);
   document.getElementById(id1).innerHTML = search.item;
   calculation();
+  totalAmount();
 };
 
-let removeItem =(id)=>{
-let selectedItem =id;
-basket = basket.filter((x)=>x.id !== selectedItem.id)
-localStorage.setItem("data", JSON.stringify(basket));
-generateCartItems()
-}
+let removeItem = (id) => {
+  let selectedItem = id;
+  basket = basket.filter((x) => x.id !== selectedItem.id);
+  localStorage.setItem("data", JSON.stringify(basket));
+  generateCartItems();
+  totalAmount();
+  localStorage.setItem("data",JSON.stringify(basket));
+};
 
-let totalAmount =()=>{
-    if(basket.length !==0){
-        let amount = basket.map((x)=>{
-            let {id,item}=x;
-            let search =  shopItemsData.find((y)=>y.id=== id)||[];
-            return item *search.price
-        }).reduce((x,y)=>x+y,0)
-        label.innerHTML =`<h2>Total Bill: $ ${amount}</h2>
+let totalAmount = () => {
+  if (basket.length !== 0) {
+    let amount = basket
+      .map((x) => {
+        let { id, item } = x;
+        let search = shopItemsData.find((y) => y.id === id) || [];
+        return item * search.price;
+      })
+      .reduce((x, y) => x + y, 0);
+    label.innerHTML = `<h2>Total Bill: $ ${amount}</h2>
         <button class ="checkout">Checkout</button>
-        <button class = "removeAll">Remove All</button>
-        `
-    }
-    else return
-}
+        <button class = "removeAll">Clear Cart</button>
+        `;
+  } else return;
+};
 totalAmount();
