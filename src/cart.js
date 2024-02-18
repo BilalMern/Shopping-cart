@@ -47,7 +47,7 @@ let generateCartItems = () => {
   } else {
     shoppingCart.innerHTML = ``;
     label.innerHTML = `
-    <h2>Cart Is Empty</h2>
+    <h2>Cart Is <span class="empty">Empty</span></h2>
     <a href = "index.html">
     <button class ="HomeBtn">Back To Home</button>
     </a>
@@ -127,9 +127,9 @@ let totalAmount = () => {
         return item * search.price;
       })
       .reduce((x, y) => x + y, 0);
-    label.innerHTML = `<h2>Total Bill: $ ${amount}</h2>
+    label.innerHTML = ` <h2>Total Bill: $ ${amount}</h2>
         <button class ="checkout">Checkout</button>
-        <button onclick ="clearCart()" class = "removeAll">Clear Cart</button>
+        <button onclick ="clearCart()" class = "removeAll">Clear Cart</button>  
         `;
   } else return;
 };
